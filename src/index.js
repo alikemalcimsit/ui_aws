@@ -6,18 +6,26 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
 //
-import App from './App';
+import { Amplify } from 'aws-amplify';
+
+import config from './aws-exports';
+
 import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
 
 // ----------------------------------------------------------------------
+
+
+import AwsLogin from './pages/AwsLogin';
+
+Amplify.configure(config);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <HelmetProvider>
     <BrowserRouter>
-      <App />
+   <AwsLogin/>
     </BrowserRouter>
   </HelmetProvider>
 );

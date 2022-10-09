@@ -4,6 +4,10 @@ import { Link as RouterLink } from 'react-router-dom';
 import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton } from '@mui/material';
 // components
+import {
+  Authenticator,
+  
+} from "@aws-amplify/ui-react";
 import MenuPopover from '../../components/MenuPopover';
 // mocks_
 import account from '../../_mock/account';
@@ -102,7 +106,13 @@ export default function AccountPopover() {
         <Divider sx={{ borderStyle: 'dashed' }} />
 
         <MenuItem onClick={handleClose} sx={{ m: 1 }}>
-          Logout
+        <Authenticator >
+        {({ signOut, user }) => (
+        <main>
+          <button style={{backgroundColor:"transparent", border:"0px"}} onClick={signOut}>Logout</button>
+        </main>
+      )}
+          </Authenticator>
         </MenuItem>
       </MenuPopover>
     </>

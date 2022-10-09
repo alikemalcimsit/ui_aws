@@ -8,7 +8,7 @@ import { BaseOptionChartStyle } from './components/chart/BaseOptionChart';
 
 // ----------------------------------------------------------------------
 
-export default function App() {
+export default function App({ signOut }) {
   return (
     <ThemeProvider>
       <ScrollToTop />
